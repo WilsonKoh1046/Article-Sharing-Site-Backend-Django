@@ -16,9 +16,9 @@ class Post(models.Model):
 
     name = models.CharField(max_length=50, null=False, blank=False)
     title = models.CharField(max_length=50)
-    content = models.CharField(max_length=5000)
+    content = models.TextField(max_length=5000)
     content_genre = models.CharField(choices=GENRE, max_length=10)
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
